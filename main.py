@@ -16,14 +16,18 @@ while True:
     try:
         option=int(input("Choose Option: "))
     except ValueError:
-        print("Invalid input")
+        print("Invalid input :(")
         print("-"*20)
         continue
-    print("-"*20)
-    
+    print("-"*20)  
     if option==1:
         category=input(f"Enter category: ")
-        amount=int(input(f"Enter amount: "))
+        try:
+            amount=int(input(f"Enter amount: "))
+        except ValueError:
+            print("Invalid input :(")
+            print("-"*20)
+            continue
         date=input(f"Enter date: ")
         expense.append({"Category":category,"Amount":amount,"Date":date})
         with open("expenses.json","w") as file:
@@ -58,7 +62,12 @@ while True:
                 print(f"{index}. {expense[index]['Category']:<12}{expense[index]['Amount']:<10}{expense[index]['Date']:<12}")
                 index+=1
             print("-"*20)
-            delete_index=int(input("Enter number to delete: "))
+            try:
+                delete_index=int(input("Enter number to delete: "))
+            except ValueError:
+                print("Invalid input :(")
+                print("-"*20)
+                continue
             if 0<=delete_index<len(expense):    
                 expense.pop(delete_index)
                 with open("expenses.json","w") as file:
