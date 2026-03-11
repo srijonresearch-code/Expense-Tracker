@@ -28,7 +28,7 @@ while True:
         expense.append({"Category":category,"Amount":amount,"Date":date})
         with open("expenses.json","w") as file:
             json.dump(expense,file)
-        print(f"Expense added successfully!")
+        print(f"Expense added successfully! ^_^")
         print("-"*20)
     elif option==2:
         index=0
@@ -63,21 +63,21 @@ while True:
                 expense.pop(delete_index)
                 with open("expenses.json","w") as file:
                     json.dump(expense,file)
-                print("Expense deleted successfully!")
+                print("Expense deleted successfully! ^_^")
                 break
             else:
-                print("Invalid number! Please enter correct number")    
+                print("Invalid number! Please enter correct number :(")    
             print("-"*20)
     elif option==6:
         with open("expenses.json","w") as file:
             json.dump([],file)
             expense=[]
-        print(f"Expenses cleared successfully!")
+        print(f"Expenses cleared successfully! ^_^")
         print("-"*20)    
     elif option==7:
-        print(f"Program exited successfully!")
+        print(f"Program exited successfully! ^_^")
         print("-"*20)
         break
     else:
-        print(f"Please enter correct option.")
+        print(f"Please enter correct option :(")
         print("-"*20)
