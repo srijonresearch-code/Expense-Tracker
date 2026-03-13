@@ -1,11 +1,13 @@
 import json
-print("-"*8,"Expense Tracker","-"*8)
+#loding data storage=>expenses.json
 try:
     with open("expenses.json","r") as file:
         expense=json.load(file)
 except:
-    expense=[]        
+    expense=[] #when the json file is not available        
+print(f"{'-'*8}Expense-Tracker{'-'*8}")
 while True:
+    #Program menu design
     print(f"1. Add Expense")
     print(f"2. View Expenses")
     print(f"3. View Total Spent")
@@ -13,6 +15,7 @@ while True:
     print(f"5. Delete Expense")
     print(f"6. Clear Expenses")
     print(f"7. Exit")
+    #choose option
     try:
         option=int(input("Choose Option: "))
     except ValueError:
@@ -20,6 +23,7 @@ while True:
         print("-"*20)
         continue
     print("-"*20)  
+    #if else condition
     if option==1:
         category=input(f"Enter category: ")
         try:
