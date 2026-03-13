@@ -21,7 +21,8 @@ A simple command line expense tracker built using Python.
 
 python main.py<br>
 
+## Screenshot
 
-This is my first python project
-<br>
+![Expense Tracker](screenshots/app-image-1.png)
+
 Author-Srijon Das
